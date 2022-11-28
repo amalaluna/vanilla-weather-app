@@ -21,6 +21,10 @@ li {
   list-style: none;
 }
 
+li::first-letter {
+  text-transform: capitalize;
+}
+
 footer {
   font-family: "Roboto", sans-serif;
   font-size: 12px;
@@ -80,7 +84,7 @@ footer a {
 
 .degrees {
   font-size: 75px;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 .weather-temperature a {
@@ -88,7 +92,7 @@ footer a {
 }
 
 .weather-temperature .units {
-  font-size: 20px;
+  font-size: 17px;
   margin-left: 5px;
   position: relative;
   top: 20px;

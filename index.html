@@ -17,6 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Vanilla weather app</title>
   </head>
@@ -33,18 +34,21 @@
           <input type="submit" value="Search" class="search-button" />
         </form>
         <div class="row">
-          <div class="col-6">
+          <div class="col-7">
             <div class="d-flex weather-temperature">
               <img src="images/thunder.png" alt="Thunder" />
-              <span class="degrees">2</span>
+              <span class="degrees" id="degrees"></span>
               <span class="units">°C | <a href="#">°F</a></span>
             </div>
           </div>
-          <div class="col-6 city-weather-description">
-            <h1>Prague</h1>
+          <div class="col-5 city-weather-description">
+            <h1 id="cityName"></h1>
             <ul>
-              <li>Thunder, Monday 10:52</li>
-              <li>Humidity: 10%, Wind: 2 km/h</li>
+              <li><span id="condition"></span>, <span id="date"></span></li>
+              <li>
+                Humidity: <span id="humidity"></span>%, Wind:
+                <span id="wind"></span> km/h
+              </li>
             </ul>
           </div>
         </div>
