@@ -87,10 +87,6 @@ footer a {
   margin-left: 10px;
 }
 
-.weather-temperature a {
-  text-decoration: none;
-}
-
 .weather-temperature .units {
   font-size: 17px;
   margin-left: 5px;
@@ -105,4 +101,18 @@ footer a {
   font-weight: 400;
   text-align: right;
   margin: 15px 0 4px;
+}
+
+.weather-temperature a {
+  text-decoration: none;
+}
+
+.weather-temperature .active {
+  color: #465764;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  color: #465764;
+  text-decoration: none;
 }

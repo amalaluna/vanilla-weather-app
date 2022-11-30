@@ -30,7 +30,9 @@ function getWeather(response) {
   let dateNow = document.querySelector("#date");
   let iconNow = document.querySelector("#icon-weather");
 
-  degreesNow.innerHTML = Math.round(response.data.temperature.current);
+  celsiusTemperature = response.data.temperature.current;
+
+  degreesNow.innerHTML = Math.round(celsiusTemperature);
   cityName.innerHTML = response.data.city;
   conditionNow.innerHTML = response.data.condition.description;
   humidityNow.innerHTML = response.data.temperature.humidity;
@@ -52,5 +54,32 @@ function submitCity(event) {
   search(searchInput.value);
 }
 
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let degreesNow = document.querySelector("#degrees");
+  degreesNow.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  let degreesNow = document.querySelector("#degrees");
+  degreesNow.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitCity);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);
+
+search("Berlin");
