@@ -32,12 +32,16 @@ function getWeather(response) {
   let humidityNow = document.querySelector("#humidity");
   let windSppedNow = document.querySelector("#wind");
   let dateNow = document.querySelector("#date");
+  let iconNow = document.querySelector("#icon-weather");
+
   degreesNow.innerHTML = Math.round(response.data.temperature.current);
   cityName.innerHTML = response.data.city;
   conditionNow.innerHTML = response.data.condition.description;
   humidityNow.innerHTML = response.data.temperature.humidity;
   windSppedNow.innerHTML = Math.round(response.data.wind.speed);
   dateNow.innerHTML = formatDate(response.data.time * 1000);
+  iconNow.setAttribute("src", `images/${response.data.condition.icon}.png`);
+  iconNow.setAttribute("alt", response.data.condition.icon);
 }
 
 axios.get(apiUrl).then(getWeather);
