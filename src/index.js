@@ -1,7 +1,3 @@
-let apiKey = "3067ad58ftc207dfda0420dfbobd0b23";
-let query = "Antananarivo";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${apiKey}&units=metric`;
-
 function formatDate(timestamp) {
   let dateNow = new Date(timestamp);
   let days = [
@@ -44,4 +40,17 @@ function getWeather(response) {
   iconNow.setAttribute("alt", response.data.condition.icon);
 }
 
-axios.get(apiUrl).then(getWeather);
+function search(city) {
+  let apiKey = "3067ad58ftc207dfda0420dfbobd0b23";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(getWeather);
+}
+
+function submitCity(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-city-input");
+  search(searchInput.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", submitCity);
