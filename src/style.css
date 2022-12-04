@@ -47,7 +47,7 @@ footer a {
 
 .input-form {
   display: flex;
-  margin-bottom: 70px;
+  margin-bottom: 35px;
 }
 
 .input-city {
@@ -84,14 +84,14 @@ footer a {
 
 .degrees {
   font-size: 75px;
-  margin-left: 10px;
+  margin: 25px 0 0 10px;
 }
 
 .weather-temperature .units {
   font-size: 17px;
   margin-left: 5px;
   position: relative;
-  top: 20px;
+  top: 47px;
 }
 
 .city-weather-description h1 {
@@ -100,7 +100,7 @@ footer a {
   font-size: 32px;
   font-weight: 400;
   text-align: right;
-  margin: 15px 0 4px;
+  margin: 30px 0 4px;
 }
 
 .weather-temperature a {
